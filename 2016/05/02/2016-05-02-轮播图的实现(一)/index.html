@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="javaScript," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="原生js实现轮播图的效果">
+<meta name="keywords" content="javaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="轮播图的实现(一)">
+<meta property="og:url" content="http://yoursite.com/2016/05/02/2016-05-02-轮播图的实现(一)/index.html">
+<meta property="og:site_name" content="杨瑞超的个人博客">
+<meta property="og:description" content="原生js实现轮播图的效果">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2016/05/02/images/lunbotu.PNG">
+<meta property="og:updated_time" content="2018-08-05T06:08:08.612Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="轮播图的实现(一)">
+<meta name="twitter:description" content="原生js实现轮播图的效果">
+<meta name="twitter:image" content="http://yoursite.com/2016/05/02/images/lunbotu.PNG">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/05/02/2016-05-02-轮播图的实现(一)/"/>
+
+
+
+
+
+  <title>轮播图的实现(一) | 杨瑞超的个人博客</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">杨瑞超的个人博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">孤独行者,孤独且孤独</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-search">
+          <a href="/search" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-search"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/05/02/2016-05-02-轮播图的实现(一)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="杨瑞超">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="杨瑞超的个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">轮播图的实现(一)</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-05-02T14:46:52+08:00">
+                2016-05-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/code/" itemprop="url" rel="index">
+                    <span itemprop="name">code</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i> 阅读数
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+              <div class="post-description">
+                  原生js实现轮播图的效果
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+      
+      
+      
+
+      
+        <p><img src="../images\lunbotu.PNG" alt="lunbotu"></p>
+<h3 id="功能分析"><a href="#功能分析" class="headerlink" title="功能分析"></a>功能分析</h3><ol>
+<li>底部下方快的点击功能</li>
+<li>左右箭头操作</li>
+<li>无缝滚动</li>
+<li>自动播放</li>
+</ol>
+<h3 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;all&quot; id=&apos;box&apos;&gt;</span><br><span class="line">  &lt;div class=&quot;screen&quot;&gt;</span><br><span class="line">    &lt;ul&gt;</span><br><span class="line">      &lt;li&gt;&lt;img src=&quot;images/1.jpg&quot; width=&quot;500&quot; height=&quot;200&quot;/&gt;&lt;/li&gt;</span><br><span class="line">      &lt;li&gt;&lt;img src=&quot;images/2.jpg&quot; width=&quot;500&quot; height=&quot;200&quot;/&gt;&lt;/li&gt;</span><br><span class="line">      &lt;li&gt;&lt;img src=&quot;images/3.jpg&quot; width=&quot;500&quot; height=&quot;200&quot;/&gt;&lt;/li&gt;</span><br><span class="line">      &lt;li&gt;&lt;img src=&quot;images/4.jpg&quot; width=&quot;500&quot; height=&quot;200&quot;/&gt;&lt;/li&gt;</span><br><span class="line">      &lt;li&gt;&lt;img src=&quot;images/5.jpg&quot; width=&quot;500&quot; height=&quot;200&quot;/&gt;&lt;/li&gt;</span><br><span class="line">    &lt;/ul&gt;</span><br><span class="line">    &lt;ol&gt;</span><br><span class="line">      &lt;!-- 动态创建的小方块，添加在这里，样式已经给写好了--&gt;</span><br><span class="line">    &lt;/ol&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">  &lt;div id=&quot;arr&quot;&gt;</span><br><span class="line">      &lt;span id=&quot;left&quot;&gt;&amp;lt;&lt;/span&gt;</span><br><span class="line">      &lt;span id=&quot;right&quot;&gt;&amp;gt;&lt;/span&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="css样式"><a href="#css样式" class="headerlink" title="css样式"></a>css样式</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">* &#123;</span><br><span class="line">      padding: 0;</span><br><span class="line">      margin: 0;</span><br><span class="line">      list-style: none;</span><br><span class="line">      border: 0;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    .all &#123;</span><br><span class="line">      width: 500px;</span><br><span class="line">      height: 200px;</span><br><span class="line">      padding: 7px;</span><br><span class="line">      border: 1px solid #ccc;</span><br><span class="line">      margin: 100px auto;</span><br><span class="line">      position: relative;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    .screen &#123;</span><br><span class="line">      width: 500px;</span><br><span class="line">      height: 200px;</span><br><span class="line">      overflow: hidden;</span><br><span class="line">      position: relative;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    .screen li &#123;</span><br><span class="line">      width: 500px;</span><br><span class="line">      height: 200px;</span><br><span class="line">      overflow: hidden;</span><br><span class="line">      float: left;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    .screen ul &#123;</span><br><span class="line">      position: absolute;</span><br><span class="line">      left: 0;</span><br><span class="line">      top: 0px;</span><br><span class="line">      width: 3000px;</span><br><span class="line">    &#125;</span><br><span class="line">   </span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="实现方式"><a href="#实现方式" class="headerlink" title="实现方式"></a>实现方式</h3><ul>
+<li>先实现点击下方小方块点击功能</li>
+</ul>
+<p>底部小方块的动态创建</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">// 获取相应的元素</span><br><span class="line">        var box = document.getElementById(&apos;box&apos;);</span><br><span class="line">        var screenBox = box.children[0];</span><br><span class="line">        var ul = screenBox.children[0]; // 要运动的ul</span><br><span class="line">        var lisUl = ul.children; // 所有的图片</span><br><span class="line">        var ol = screenBox.children[1]; // 底部小方块的父盒子</span><br><span class="line">        var lisOl = ol.children; // 所有的底部小方块</span><br><span class="line">        var arrBox = box.children[1]; // 箭头的父盒子</span><br><span class="line">        var arrLeft = arrBox.children[0]; // 左箭头</span><br><span class="line">        var arrRight = arrBox.children[1]; // 右箭头</span><br><span class="line">        var imgWidth = screenBox.offsetWidth; // 可视区域的宽度，代表了图片宽度</span><br><span class="line">        for(var i =0,len = lisUl.length;i&lt;len;i++)&#123;</span><br><span class="line">            var li = document.createElement(&apos;li&apos;);</span><br><span class="line">            li.innerHTML = i +1 ;</span><br><span class="line">            ol.appendChild(li)</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+<p>给小方块设置样式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">.all ol &#123;</span><br><span class="line">      position: absolute;</span><br><span class="line">      right: 10px;</span><br><span class="line">      bottom: 10px;</span><br><span class="line">      line-height: 20px;</span><br><span class="line">      text-align: center;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    .all ol li &#123;</span><br><span class="line">      float: left;</span><br><span class="line">      width: 20px;</span><br><span class="line">      height: 20px;</span><br><span class="line">      background: #fff;</span><br><span class="line">      border: 1px solid #ccc;</span><br><span class="line">      margin-left: 10px;</span><br><span class="line">      cursor: pointer;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    .all ol li.current &#123;</span><br><span class="line">      background: yellow;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>点击小方块设置功能之前,需要先设置一个运动函数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">function move (element, target) &#123;</span><br><span class="line">    clearInterval(element.timer);//清除旧的定时器，保证匀速运动，防止加速效果</span><br><span class="line">    element.timer = setInterval(function () &#123;</span><br><span class="line">      //1 获取元素当前位置 使用offsetLeft属性</span><br><span class="line">      var current = element.offsetLeft;</span><br><span class="line">      //2 设置步长</span><br><span class="line">      var step = 17;</span><br><span class="line">      //根据当前位置和目标位置的大小关系进行判断</span><br><span class="line">      step = target &gt; current ? step : -step;</span><br><span class="line">      //5 运动条件设置</span><br><span class="line">      //检测当前位置和目标位置之间的距离，如果满足一个step的距离，可以运动，否则直接运动到目标位置，结束</span><br><span class="line">      if (Math.abs(target - current) &gt; Math.abs(step)) &#123;</span><br><span class="line">        //3 设置运动公式:元素位置(新) = 元素位置(旧) + 步长;</span><br><span class="line">        current = current + step;</span><br><span class="line">        //4 设置给元素的left值运动</span><br><span class="line">        element.style.left = current + &quot;px&quot;;</span><br><span class="line">      &#125; else &#123;</span><br><span class="line">        //6 让element直接运动到目标位置，再清除定时器</span><br><span class="line">        element.style.left = target + &quot;px&quot;;</span><br><span class="line">        clearInterval(element.timer);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;, 20);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>点击小方块实现功能</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">// 点击相应的小方块实现排他功能,和运动</span><br><span class="line">        lisOl[0].className = &quot;current&quot;;</span><br><span class="line">        for (var i = 0,len = lisOl.length;i&lt;len;i++)&#123;</span><br><span class="line">            lisOl[i].index = i;</span><br><span class="line">            lisOl[i].onclick = function()&#123;</span><br><span class="line">                for(var i =0,len =lisOl.length;i&lt;len;i++)&#123;</span><br><span class="line">                    lisOl[i].className = &apos;&apos;;</span><br><span class="line">                &#125;</span><br><span class="line">            this.className = &apos;current&apos;;</span><br><span class="line">            move(ul,-this.index *imgWidth)</span><br><span class="line">            // --- 后期添加：点击小方块时，需要将count的值与当前按钮的下标同步</span><br><span class="line">      		count = this.index;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>点击右按钮实现运动</p>
+<p>左右箭头的样式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">#arr &#123;</span><br><span class="line">      display: none;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    #arr span &#123;</span><br><span class="line">      width: 40px;</span><br><span class="line">      height: 40px;</span><br><span class="line">      position: absolute;</span><br><span class="line">      left: 5px;</span><br><span class="line">      top: 50%;</span><br><span class="line">      margin-top: -20px;</span><br><span class="line">      background: #000;</span><br><span class="line">      cursor: pointer;</span><br><span class="line">      line-height: 40px;</span><br><span class="line">      text-align: center;</span><br><span class="line">      font-weight: bold;</span><br><span class="line">      font-family: &apos;黑体&apos;;</span><br><span class="line">      font-size: 30px;</span><br><span class="line">      color: #fff;</span><br><span class="line">      opacity: 0.3;</span><br><span class="line">      border: 1px solid #fff;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    #arr #right &#123;</span><br><span class="line">      right: 5px;</span><br><span class="line">      left: auto;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>  默认是隐藏的,让他显示</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">box.onmouseover = function () &#123;</span><br><span class="line">    arrBox.style.display = &apos;block&apos;;</span><br><span class="line">  &#125;;</span><br><span class="line">  box.onmouseout = function () &#123;</span><br><span class="line">    arrBox.style.display = &apos;none&apos;;</span><br><span class="line">  &#125;;</span><br></pre></td></tr></table></figure>
+<p>  点击右键的操作</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">var firstPic = lisUl[0].cloneNode(true); // 克隆的假的第一张</span><br><span class="line">ul.appendChild(firstPic);</span><br><span class="line">var count = 0;</span><br><span class="line">//   右按钮点击后，设置滚出张数+1</span><br><span class="line">arrRight.onclick = function () &#123;</span><br><span class="line">  // --- 当页面中显示假的第一张时，不能正常的滚动了，需要先抽回到真正的第一张图片位置</span><br><span class="line">  if (count === lisUl.length - 1) &#123;</span><br><span class="line">    ul.style.left = 0 + &apos;px&apos;;</span><br><span class="line">    count = 0;</span><br><span class="line">  &#125;</span><br><span class="line">  count++;</span><br><span class="line">  // 根据count设置ul的运动位置：  -count * imgWidth</span><br><span class="line">  move(ul, -count * imgWidth);</span><br><span class="line">  // 设置按钮变色效果：</span><br><span class="line">  //     通过观察我们发现，当前要高亮显示的小方块的下标与count相同</span><br><span class="line">  for (var i = 0; i &lt; lisOl.length; i++) &#123;</span><br><span class="line">    lisOl[i].className = &apos;&apos;;</span><br><span class="line">  &#125;</span><br><span class="line">  // --- 当页面显示假的第一张时，count为5，导致下面出现问题，单独判断</span><br><span class="line">  if (count === lisUl.length - 1) &#123;</span><br><span class="line">    lisOl[0].className = &apos;current&apos;;</span><br><span class="line">  &#125; else &#123;</span><br><span class="line">    lisOl[count].className = &apos;current&apos;;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>  点击左键的操作</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">arrLeft.onclick = function () &#123;</span><br><span class="line">    // 当页面显示第一张图时，点击左按钮，将ul抽回到假的第一张显示的位置</span><br><span class="line">    if (count === 0) &#123;</span><br><span class="line">      ul.style.left = -(lisUl.length - 1) * imgWidth + &apos;px&apos;;</span><br><span class="line">      count = lisUl.length - 1;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    count--;</span><br><span class="line">    // 根据count设置ul的运动位置：  -count * imgWidth</span><br><span class="line">    move(ul, -count * imgWidth);</span><br><span class="line"></span><br><span class="line">    for (var i = 0; i &lt; lisOl.length; i++) &#123;</span><br><span class="line">      lisOl[i].className = &apos;&apos;;</span><br><span class="line">    &#125;</span><br><span class="line">    lisOl[count].className = &apos;current&apos;;</span><br><span class="line">  &#125;;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+    <div>
+        
+          <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+        
+      </div>
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/javaScript/" rel="tag"><i class="fa fa-tag"></i> javaScript</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/12/02/2015-12-02-fullpage的简单原理/" rel="next" title="fullpage的简单原理">
+                <i class="fa fa-chevron-left"></i> fullpage的简单原理
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.jpg"
+               alt="杨瑞超" />
+          <p class="site-author-name" itemprop="name">杨瑞超</p>
+           
+              <p class="site-description motion-element" itemprop="description">天下事有难易乎？为之，则难者亦易矣；不为，则易者亦难矣。</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/yangruichao" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/6224797196" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      微博
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/your-user-name" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      知乎
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              推荐阅读
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.zhangxinxu.com/" title="张鑫旭" target="_blank">张鑫旭</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.36zhen.com/t?id=3448" title="前端书籍资料" target="_blank">前端书籍资料</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://wf.uisdc.com/cn/" title="google前端开发基础" target="_blank">google前端开发基础</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#功能分析"><span class="nav-number">1.</span> <span class="nav-text">功能分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结构"><span class="nav-number">2.</span> <span class="nav-text">结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#css样式"><span class="nav-number">3.</span> <span class="nav-text">css样式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现方式"><span class="nav-number">4.</span> <span class="nav-text">实现方式</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">杨瑞超</span>
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i> 访问人数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i> 总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>
