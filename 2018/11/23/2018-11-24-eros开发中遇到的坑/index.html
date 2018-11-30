@@ -109,7 +109,7 @@
 <meta property="og:site_name" content="杨瑞超的个人博客">
 <meta property="og:description" content="eros开发中遇到的坑(持续更新中)">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-23T16:40:31.926Z">
+<meta property="og:updated_time" content="2018-11-30T13:31:48.610Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="eros开发中遇到的坑(持续更新中)">
 <meta name="twitter:description" content="eros开发中遇到的坑(持续更新中)">
@@ -445,8 +445,7 @@
 </li>
 </ol>
 </li>
-<li><p>原生导航栏iOS左右不会滑动,Android会滑动</p>
-<p>刚刚遇到,正在解决….</p>
+<li><p>运行weex debug 时可能会出现错误,我第一次安装的时候觉得太慢了就把他取消了,运行weex debug 也可以跑起来,但是不能进行调试,原因是少安装了一个包(Chromium) ,<br>看cmd 有个错误Error: AssertionError [ERR_ASSERTION]: Chromium revision is not downloaded. Run “npm install”会提示你npm install  不要管他 ,更新你的weex-debugger,weex update weex-debugger<br>更新完后 运行weex debug 会再次安装weex-debugger ,然后重要的是还有一个(Chromium) 的安装 很慢 ,但一定要等他安装完 ,才可以 然后就OK了<br>附上 解决地址 :<a href="https://github.com/weexteam/weex-toolkit/issues/408" target="_blank" rel="noopener">https://github.com/weexteam/weex-toolkit/issues/408</a><br>这个还是挺不小心的,主要是也能跑起来weex debug ,所以刚开始没往那方面想,被这个小坑了下 </p>
 </li>
 </ul>
 <h3 id="后续在写…问题持续更新中………"><a href="#后续在写…问题持续更新中………" class="headerlink" title="后续在写…问题持续更新中……….."></a>后续在写…问题持续更新中………..</h3>
