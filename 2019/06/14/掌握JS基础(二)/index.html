@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="JavaScript," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="Object相关">
+<meta name="keywords" content="JavaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="掌握JS基础(二)">
+<meta property="og:url" content="http://yoursite.com/2019/06/14/掌握JS基础(二)/index.html">
+<meta property="og:site_name" content="杨瑞超的个人博客">
+<meta property="og:description" content="Object相关">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-06-18T06:22:32.348Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="掌握JS基础(二)">
+<meta name="twitter:description" content="Object相关">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/06/14/掌握JS基础(二)/"/>
+
+
+
+
+
+  <title>掌握JS基础(二) | 杨瑞超的个人博客</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">杨瑞超的个人博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">孤独行者,孤独且孤独</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-search">
+          <a href="/search" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-search"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/14/掌握JS基础(二)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="杨瑞超">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="杨瑞超的个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">掌握JS基础(二)</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-14T20:04:27+08:00">
+                2019-06-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/code/" itemprop="url" rel="index">
+                    <span itemprop="name">code</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i> 阅读数
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+              <div class="post-description">
+                  Object相关
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+      
+      
+      
+
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言:"></a>前言:</h2><p>​    工作中应该会经常遇到一些API,感觉也见过但是没啥印象,所以打算利用闲暇时间,来整理一下!这篇文章介绍Object</p>
+<p>其他文章链接:</p>
+<ul>
+<li><a href="https://yangruichao.github.io/2019/05/13/%E6%8E%8C%E6%8F%A1JS%E5%9F%BA%E7%A1%80(%E4%B8%80" target="_blank" rel="noopener">掌握js基础(一)</a>/ )</li>
+</ul>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h4 id="Object的构造方法"><a href="#Object的构造方法" class="headerlink" title="Object的构造方法"></a><code>Object</code>的构造方法</h4><ul>
+<li><h5 id="Object-assign"><a href="#Object-assign" class="headerlink" title="Object.assign()"></a>Object.assign()</h5><ul>
+<li><p>将所有可枚举属性的值从一个或多个源对象复制到目标对象。它将返回目标对象。 </p>
+</li>
+<li><p>语法: <code>Object.assign(target, ...sources)</code></p>
+</li>
+<li><p>返回值: 目标对象 </p>
+</li>
+<li><p>示例: </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">const obj = &#123; a: 1 &#125;;</span><br><span class="line">const copy = Object.assign(&#123;&#125;, obj);</span><br><span class="line">console.log(copy); // &#123; a: 1 &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>深拷贝问题:  针对深拷贝，需要使用其他办法，因为 <code>Object.assign()</code>拷贝的是属性值。假如源对象的属性值是一个对象的引用，那么它也只指向那个引用 </p>
+</li>
+</ul>
+</li>
+<li><h5 id="Object-create"><a href="#Object-create" class="headerlink" title="Object.create()"></a>Object.create()</h5><ul>
+<li>创建一个新对象，使用现有的对象来提供新创建的对象的<strong>proto</strong>。  </li>
+<li>语法: <code>Object.create(proto, [propertiesObject])</code></li>
+<li>返回值: 一个新对象，带着指定的原型对象和属性。 </li>
+</ul>
+</li>
+<li><h5 id="Object-defineProperty"><a href="#Object-defineProperty" class="headerlink" title="Object.defineProperty()"></a><strong>Object.defineProperty()</strong></h5><ul>
+<li><p>给对象添加一个属性并指定该属性的配置。</p>
+</li>
+<li><p>语法: <code>Object.defineProperty(obj, prop, descriptor)</code></p>
+<p>参数: obj : 要在其上定义属性的对象。 </p>
+<p>​      prop : 要定义或修改的属性的名称。 </p>
+<p>​          descriptor: 将被定义或修改的属性描述符。 </p>
+</li>
+<li><p>返回值: 被传递给函数的对象。 </p>
+</li>
+<li><p>属性描述符</p>
+<p><code>configurable</code>: 当且仅当该属性的 configurable 为 true 时，该属性<code>描述符</code>才能够被改变，同时该属性也能从对应的对象上被删除。<strong>默认为 false</strong>。 </p>
+<p><code>enumerable</code>: 当且仅当该属性的<code>enumerable</code>为<code>true</code>时，该属性才能够出现在对象的枚举属性中。<strong>默认为 false</strong>。 </p>
+<p><code>value</code>: 该属性对应的值。可以是任何有效的 JavaScript 值（数值，对象，函数等）。<strong>默认为 undefined</strong>。 </p>
+<p><code>writable</code>: 当且仅当该属性的<code>writable</code>为<code>true</code>时，<code>value</code>才能被<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Assignment_Operators" target="_blank" rel="noopener">赋值运算符</a>改变。<strong>默认为 false</strong>。 </p>
+<p><code>get</code>: 一个给属性提供 getter 的方法，如果没有 getter 则为 <code>undefined</code>。当访问该属性时，该方法会被执行，方法执行时没有参数传入，但是会传入<code>this</code>对象（由于继承关系，这里的<code>this</code>并不一定是定义该属性的对象）。<strong>默认为 undefined</strong>。</p>
+<p><code>set</code>: 一个给属性提供 setter 的方法，如果没有 setter 则为 <code>undefined</code>。当属性值修改时，触发执行该方法。该方法将接受唯一参数，即该属性新的参数值。 <strong>默认为 undefined</strong>。</p>
+</li>
+<li><p>示例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">var o = &#123;&#125;; // 创建一个新对象</span><br><span class="line"></span><br><span class="line">// 在对象中添加一个属性与数据描述符的示例</span><br><span class="line">Object.defineProperty(o, &quot;a&quot;, &#123;</span><br><span class="line">  value : 37,</span><br><span class="line">  writable : true,</span><br><span class="line">  enumerable : true,</span><br><span class="line">  configurable : true</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">// 对象o拥有了属性a，值为37</span><br><span class="line"></span><br><span class="line">// 在对象中添加一个属性与存取描述符的示例</span><br><span class="line">var bValue;</span><br><span class="line">Object.defineProperty(o, &quot;b&quot;, &#123;</span><br><span class="line">  get : function()&#123;</span><br><span class="line">    return bValue;</span><br><span class="line">  &#125;,</span><br><span class="line">  set : function(newValue)&#123;</span><br><span class="line">    bValue = newValue;</span><br><span class="line">  &#125;,</span><br><span class="line">  enumerable : true,</span><br><span class="line">  configurable : true</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">o.b = 38;</span><br><span class="line">// 对象o拥有了属性b，值为38</span><br><span class="line"></span><br><span class="line">// o.b的值现在总是与bValue相同，除非重新定义o.b</span><br><span class="line"></span><br><span class="line">// 数据描述符和存取描述符不能混合使用</span><br><span class="line">Object.defineProperty(o, &quot;conflict&quot;, &#123;</span><br><span class="line">  value: 0x9f91102, </span><br><span class="line">  get: function() &#123; </span><br><span class="line">    return 0xdeadbeef; </span><br><span class="line">  &#125; </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><h5 id="Object-defineProperties"><a href="#Object-defineProperties" class="headerlink" title="Object.defineProperties()"></a><strong>Object.defineProperties()</strong></h5><ul>
+<li><p>给对象添加多个属性并分别指定它们的配置。 </p>
+</li>
+<li><p>语法:  <code>Object.defineProperties(obj, props)</code></p>
+</li>
+<li><p>参数 基本与<code>Object.defineProperty()</code>类似,这里不再介绍</p>
+</li>
+<li><p>返回值: 传递给函数的对象。 </p>
+</li>
+<li><p>示例: </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;&#125;;</span><br><span class="line">Object.defineProperties(obj, &#123;</span><br><span class="line">  &apos;property1&apos;: &#123;</span><br><span class="line">    value: true,</span><br><span class="line">    writable: true</span><br><span class="line">  &#125;,</span><br><span class="line">  &apos;property2&apos;: &#123;</span><br><span class="line">    value: &apos;Hello&apos;,</span><br><span class="line">    writable: false</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><h5 id="Object-entries"><a href="#Object-entries" class="headerlink" title="Object.entries()"></a>Object.entries()</h5><ul>
+<li><p>返回给定对象自身可枚举属性的 <code>[key, value]</code> 数组。 </p>
+</li>
+<li><p>语法: <code>Object.entries(obj)</code></p>
+</li>
+<li><p>返回值: 给定对象自身可枚举属性的键值对数组。 </p>
+</li>
+<li><p>示例: </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">const obj = &#123; foo: &apos;bar&apos;, baz: 42 &#125;;</span><br><span class="line">console.log(Object.entries(obj)); // [ [&apos;foo&apos;, &apos;bar&apos;], [&apos;baz&apos;, 42] ]</span><br><span class="line"></span><br><span class="line">// array like object</span><br><span class="line">const obj = &#123; 0: &apos;a&apos;, 1: &apos;b&apos;, 2: &apos;c&apos; &#125;;</span><br><span class="line">console.log(Object.entries(obj)); // [ [&apos;0&apos;, &apos;a&apos;], [&apos;1&apos;, &apos;b&apos;], [&apos;2&apos;, &apos;c&apos;] ]</span><br><span class="line"></span><br><span class="line">// array like object with random key ordering</span><br><span class="line">const anObj = &#123; 100: &apos;a&apos;, 2: &apos;b&apos;, 7: &apos;c&apos; &#125;;</span><br><span class="line">console.log(Object.entries(anObj)); // [ [&apos;2&apos;, &apos;b&apos;], [&apos;7&apos;, &apos;c&apos;], [&apos;100&apos;, &apos;a&apos;] ]</span><br><span class="line"></span><br><span class="line">// getFoo is property which isn&apos;t enumerable</span><br><span class="line">const myObj = Object.create(&#123;&#125;, &#123; getFoo: &#123; value() &#123; return this.foo; &#125; &#125; &#125;);</span><br><span class="line">myObj.foo = &apos;bar&apos;;</span><br><span class="line">console.log(Object.entries(myObj)); // [ [&apos;foo&apos;, &apos;bar&apos;] ]</span><br><span class="line"></span><br><span class="line">// non-object argument will be coerced to an object</span><br><span class="line">console.log(Object.entries(&apos;foo&apos;)); // [ [&apos;0&apos;, &apos;f&apos;], [&apos;1&apos;, &apos;o&apos;], [&apos;2&apos;, &apos;o&apos;] ]</span><br><span class="line"></span><br><span class="line">// iterate through key-value gracefully</span><br><span class="line">const obj = &#123; a: 5, b: 7, c: 9 &#125;;</span><br><span class="line">for (const [key, value] of Object.entries(obj)) &#123;</span><br><span class="line">  console.log(`$&#123;key&#125; $&#123;value&#125;`); // &quot;a 5&quot;, &quot;b 7&quot;, &quot;c 9&quot;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// Or, using array extras</span><br><span class="line">Object.entries(obj).forEach(([key, value]) =&gt; &#123;</span><br><span class="line">console.log(`$&#123;key&#125; $&#123;value&#125;`); // &quot;a 5&quot;, &quot;b 7&quot;, &quot;c 9&quot;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">// 将Object转换为Map</span><br><span class="line">var obj = &#123; foo: &quot;bar&quot;, baz: 42 &#125;; </span><br><span class="line">var map = new Map(Object.entries(obj));</span><br><span class="line">console.log(map); // Map &#123; foo: &quot;bar&quot;, baz: 42 &#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><h5 id="Object-freeze"><a href="#Object-freeze" class="headerlink" title="Object.freeze()"></a>Object.freeze()</h5><ul>
+<li><p>冻结对象：其他代码不能删除或更改任何属性。 </p>
+</li>
+<li><p>语法: <code>Object.freeze(obj)</code></p>
+</li>
+<li><p>返回值: 被冻结的对象。 </p>
+</li>
+<li><p>示例:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;</span><br><span class="line">  prop: function() &#123;&#125;,</span><br><span class="line">  foo: &apos;bar&apos;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">// 新的属性会被添加, 已存在的属性可能</span><br><span class="line">// 会被修改或移除</span><br><span class="line">obj.foo = &apos;baz&apos;;</span><br><span class="line">obj.lumpy = &apos;woof&apos;;</span><br><span class="line">delete obj.prop;</span><br><span class="line"></span><br><span class="line">// 作为参数传递的对象与返回的对象都被冻结</span><br><span class="line">// 所以不必保存返回的对象（因为两个对象全等）</span><br><span class="line">var o = Object.freeze(obj);</span><br><span class="line"></span><br><span class="line">o === obj; // true</span><br><span class="line">Object.isFrozen(obj); // === true</span><br><span class="line"></span><br><span class="line">// 现在任何改变都会失效</span><br><span class="line">obj.foo = &apos;quux&apos;; // 静默地不做任何事</span><br><span class="line">// 静默地不添加此属性</span><br><span class="line">obj.quaxxor = &apos;the friendly duck&apos;;</span><br><span class="line"></span><br><span class="line">// 在严格模式，如此行为将抛出 TypeErrors</span><br><span class="line">function fail()&#123;</span><br><span class="line">  &apos;use strict&apos;;</span><br><span class="line">  obj.foo = &apos;sparky&apos;; // throws a TypeError</span><br><span class="line">  delete obj.quaxxor; // 返回true，因为quaxxor属性从来未被添加</span><br><span class="line">  obj.sparky = &apos;arf&apos;; // throws a TypeError</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fail();</span><br><span class="line"></span><br><span class="line">// 试图通过 Object.defineProperty 更改属性</span><br><span class="line">// 下面两个语句都会抛出 TypeError.</span><br><span class="line">Object.defineProperty(obj, &apos;ohai&apos;, &#123; value: 17 &#125;);</span><br><span class="line">Object.defineProperty(obj, &apos;foo&apos;, &#123; value: &apos;eit&apos; &#125;);</span><br><span class="line"></span><br><span class="line">// 也不能更改原型</span><br><span class="line">// 下面两个语句都会抛出 TypeError.</span><br><span class="line">Object.setPrototypeOf(obj, &#123; x: 20 &#125;)</span><br><span class="line">obj.__proto__ = &#123; x: 20 &#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><h5 id="Object-getOwnPropertyDescriptor"><a href="#Object-getOwnPropertyDescriptor" class="headerlink" title="Object.getOwnPropertyDescriptor()"></a><strong>Object.getOwnPropertyDescriptor()</strong></h5><ul>
+<li><p>返回对象指定的属性配置。 </p>
+</li>
+<li><p>语法: <code>Object.getOwnPropertyDescriptor(obj, prop)</code></p>
+</li>
+<li><p>返回值: 如果指定的属性存在于对象上，则返回其属性描述符对象（property descriptor），否则返回 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/undefined" target="_blank" rel="noopener"><code>undefined</code></a>。 </p>
+</li>
+<li><p>示例: </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">var o, d;</span><br><span class="line"></span><br><span class="line">o = &#123; get foo() &#123; return 17; &#125; &#125;;</span><br><span class="line">d = Object.getOwnPropertyDescriptor(o, &quot;foo&quot;);</span><br><span class="line">// d &#123;</span><br><span class="line">//   configurable: true,</span><br><span class="line">//   enumerable: true,</span><br><span class="line">//   get: /*the getter function*/,</span><br><span class="line">//   set: undefined</span><br><span class="line">// &#125;</span><br><span class="line"></span><br><span class="line">o = &#123; bar: 42 &#125;;</span><br><span class="line">d = Object.getOwnPropertyDescriptor(o, &quot;bar&quot;);</span><br><span class="line">// d &#123;</span><br><span class="line">//   configurable: true,</span><br><span class="line">//   enumerable: true,</span><br><span class="line">//   value: 42,</span><br><span class="line">//   writable: true</span><br><span class="line">// &#125;</span><br><span class="line"></span><br><span class="line">o = &#123;&#125;;</span><br><span class="line">Object.defineProperty(o, &quot;baz&quot;, &#123;</span><br><span class="line">  value: 8675309,</span><br><span class="line">  writable: false,</span><br><span class="line">  enumerable: false</span><br><span class="line">&#125;);</span><br><span class="line">d = Object.getOwnPropertyDescriptor(o, &quot;baz&quot;);</span><br><span class="line">// d &#123;</span><br><span class="line">//   value: 8675309,</span><br><span class="line">//   writable: false,</span><br><span class="line">//   enumerable: false,</span><br><span class="line">//   configurable: false</span><br><span class="line">// &#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><h5 id="Object-getOwnPropertyNames"><a href="#Object-getOwnPropertyNames" class="headerlink" title="Object.getOwnPropertyNames()"></a><strong>Object.getOwnPropertyNames()</strong></h5><ul>
+<li><p>返回一个数组，它包含了指定对象所有的可枚举或不可枚举的属性名。 </p>
+</li>
+<li><p>语法: Object.getOwnPropertyNames(obj)</p>
+</li>
+<li><p>返回值: 在给定对象上找到的自身属性对应的字符串数组。 </p>
+</li>
+<li><p>示例: </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">var arr = [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;];</span><br><span class="line">console.log(Object.getOwnPropertyNames(arr).sort()); // [&quot;0&quot;, &quot;1&quot;, &quot;2&quot;, &quot;length&quot;]</span><br><span class="line"></span><br><span class="line">// 类数组对象</span><br><span class="line">var obj = &#123; 0: &quot;a&quot;, 1: &quot;b&quot;, 2: &quot;c&quot;&#125;;</span><br><span class="line">console.log(Object.getOwnPropertyNames(obj).sort()); // [&quot;0&quot;, &quot;1&quot;, &quot;2&quot;]</span><br><span class="line"></span><br><span class="line">// 使用Array.forEach输出属性名和属性值</span><br><span class="line">Object.getOwnPropertyNames(obj).forEach(function(val, idx, array) &#123;</span><br><span class="line">  console.log(val + &quot; -&gt; &quot; + obj[val]);</span><br><span class="line">&#125;);</span><br><span class="line">// 输出</span><br><span class="line">// 0 -&gt; a</span><br><span class="line">// 1 -&gt; b</span><br><span class="line">// 2 -&gt; c</span><br><span class="line"></span><br><span class="line">//不可枚举属性</span><br><span class="line">var my_obj = Object.create(&#123;&#125;, &#123;</span><br><span class="line">  getFoo: &#123;</span><br><span class="line">    value: function() &#123; return this.foo; &#125;,</span><br><span class="line">    enumerable: false</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line">my_obj.foo = 1;</span><br><span class="line"></span><br><span class="line">console.log(Object.getOwnPropertyNames(my_obj).sort()); // [&quot;foo&quot;, &quot;getFoo&quot;]</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><h5 id="Object-getOwnPropertySymbols"><a href="#Object-getOwnPropertySymbols" class="headerlink" title="Object.getOwnPropertySymbols()"></a>Object.getOwnPropertySymbols()</h5><ul>
+<li><p>返回一个数组，它包含了指定对象自身所有的符号属性。 </p>
+</li>
+<li><p>语法: <code>Object.getOwnPropertySymbols(obj)</code></p>
+</li>
+<li><p>返回值: 在给定对象自身上找到的所有 Symbol 属性的数组。 </p>
+</li>
+<li><p>示例: </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;&#125;;</span><br><span class="line">var a = Symbol(&quot;a&quot;);</span><br><span class="line">var b = Symbol.for(&quot;b&quot;);</span><br><span class="line"></span><br><span class="line">obj[a] = &quot;localSymbol&quot;;</span><br><span class="line">obj[b] = &quot;globalSymbol&quot;;</span><br><span class="line"></span><br><span class="line">var objectSymbols = Object.getOwnPropertySymbols(obj);</span><br><span class="line"></span><br><span class="line">console.log(objectSymbols.length); // 2</span><br><span class="line">console.log(objectSymbols)         // [Symbol(a), Symbol(b)]</span><br><span class="line">console.log(objectSymbols[0])      // Symbol(a)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><h5 id="Object-getPrototypeOf"><a href="#Object-getPrototypeOf" class="headerlink" title="Object.getPrototypeOf()"></a><strong>Object.getPrototypeOf()</strong></h5><ul>
+<li><p>返回指定对象的原型对象。 </p>
+</li>
+<li><p>语法: <code>Object.getPrototypeOf(object)</code></p>
+</li>
+<li><p>返回值: 给定对象的原型。如果没有继承属性，则返回 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/null" target="_blank" rel="noopener"><code>null</code></a> 。 </p>
+</li>
+<li><p>示例: </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var proto = &#123;&#125;;</span><br><span class="line">var obj = Object.create(proto);</span><br><span class="line">Object.getPrototypeOf(obj) === proto; // true</span><br><span class="line"></span><br><span class="line">var reg = /a/;</span><br><span class="line">Object.getPrototypeOf(reg) === RegExp.prototype; // true</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><h5 id="Object-is"><a href="#Object-is" class="headerlink" title="Object.is()"></a>Object.is()</h5><ul>
+<li><p>比较两个值是否相同。所有 NaN 值都相等（这与==和===不同）。 </p>
+</li>
+<li><p>语法: <code>Object.is(value1, value2);</code></p>
+</li>
+<li><p>返回值: 表示两个参数是否相同的<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Boolean" target="_blank" rel="noopener"><code>布尔值</code></a> 。 </p>
+</li>
+<li><p>示例: </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">Object.is(&apos;foo&apos;, &apos;foo&apos;);     // true</span><br><span class="line">Object.is(window, window);   // true</span><br><span class="line"></span><br><span class="line">Object.is(&apos;foo&apos;, &apos;bar&apos;);     // false</span><br><span class="line">Object.is([], []);           // false</span><br><span class="line"></span><br><span class="line">var foo = &#123; a: 1 &#125;;</span><br><span class="line">var bar = &#123; a: 1 &#125;;</span><br><span class="line">Object.is(foo, foo);         // true</span><br><span class="line">Object.is(foo, bar);         // false</span><br><span class="line"></span><br><span class="line">Object.is(null, null);       // true</span><br><span class="line"></span><br><span class="line">// 特例</span><br><span class="line">Object.is(0, -0);            // false</span><br><span class="line">Object.is(0, +0);            // true</span><br><span class="line">Object.is(-0, -0);           // true</span><br><span class="line">Object.is(NaN, 0/0);         // true</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><h5 id="Object-isExtensible"><a href="#Object-isExtensible" class="headerlink" title="Object.isExtensible()"></a><strong>Object.isExtensible()</strong></h5><ul>
+<li><p>判断一个对象是否是可扩展的（是否可以在它上面添加新的属性）。 </p>
+</li>
+<li><p>语法: Object.isExtensible(obj)</p>
+</li>
+<li><p>返回值: 表示给定对象是否可扩展的一个<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Boolean" target="_blank" rel="noopener"><code>Boolean</code></a> 。 </p>
+</li>
+<li><p>示例: </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">// 新对象默认是可扩展的.</span><br><span class="line">var empty = &#123;&#125;;</span><br><span class="line">Object.isExtensible(empty); // === true</span><br><span class="line"></span><br><span class="line">// ...可以变的不可扩展.</span><br><span class="line">Object.preventExtensions(empty);</span><br><span class="line">Object.isExtensible(empty); // === false</span><br><span class="line"></span><br><span class="line">// 密封对象是不可扩展的.</span><br><span class="line">var sealed = Object.seal(&#123;&#125;);</span><br><span class="line">Object.isExtensible(sealed); // === false</span><br><span class="line"></span><br><span class="line">// 冻结对象也是不可扩展.</span><br><span class="line">var frozen = Object.freeze(&#123;&#125;);</span><br><span class="line">Object.isExtensible(frozen); // === false</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><h5 id="Object-isFrozen"><a href="#Object-isFrozen" class="headerlink" title="Object.isFrozen()"></a><strong>Object.isFrozen()</strong></h5><ul>
+<li><p>判断对象是否已经冻结。 </p>
+</li>
+<li><p>语法: <code>Object.isFrozen(obj)</code></p>
+</li>
+<li><p>返回值: 表示给定对象是否被冻结的<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Boolean" target="_blank" rel="noopener"><code>Boolean</code></a>。 </p>
+</li>
+<li><p>示例: </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line">// 一个对象默认是可扩展的,所以它也是非冻结的.</span><br><span class="line">Object.isFrozen(&#123;&#125;); // === false</span><br><span class="line"></span><br><span class="line">// 一个不可扩展的空对象同时也是一个冻结对象.</span><br><span class="line">var vacuouslyFrozen = Object.preventExtensions(&#123;&#125;);</span><br><span class="line">Object.isFrozen(vacuouslyFrozen) //=== true;</span><br><span class="line"></span><br><span class="line">// 一个非空对象默认也是非冻结的.</span><br><span class="line">var oneProp = &#123; p: 42 &#125;;</span><br><span class="line">Object.isFrozen(oneProp) //=== false</span><br><span class="line"></span><br><span class="line">// 让这个对象变的不可扩展,并不意味着这个对象变成了冻结对象,</span><br><span class="line">// 因为p属性仍然是可以配置的(而且可写的).</span><br><span class="line">Object.preventExtensions(oneProp);</span><br><span class="line">Object.isFrozen(oneProp) //=== false</span><br><span class="line"></span><br><span class="line">// ...如果删除了这个属性,则它会成为一个冻结对象.</span><br><span class="line">delete oneProp.p;</span><br><span class="line">Object.isFrozen(oneProp) //=== true</span><br><span class="line"></span><br><span class="line">// 一个不可扩展的对象,拥有一个不可写但可配置的属性,则它仍然是非冻结的.</span><br><span class="line">var nonWritable = &#123; e: &quot;plep&quot; &#125;;</span><br><span class="line">Object.preventExtensions(nonWritable);</span><br><span class="line">Object.defineProperty(nonWritable, &quot;e&quot;, &#123; writable: false &#125;); // 变得不可写</span><br><span class="line">Object.isFrozen(nonWritable) //=== false</span><br><span class="line"></span><br><span class="line">// 把这个属性改为不可配置,会让这个对象成为冻结对象.</span><br><span class="line">Object.defineProperty(nonWritable, &quot;e&quot;, &#123; configurable: false &#125;); // 变得不可配置</span><br><span class="line">Object.isFrozen(nonWritable) //=== true</span><br><span class="line"></span><br><span class="line">// 一个不可扩展的对象,拥有一个不可配置但可写的属性,则它仍然是非冻结的.</span><br><span class="line">var nonConfigurable = &#123; release: &quot;the kraken!&quot; &#125;;</span><br><span class="line">Object.preventExtensions(nonConfigurable);</span><br><span class="line">Object.defineProperty(nonConfigurable, &quot;release&quot;, &#123; configurable: false &#125;);</span><br><span class="line">Object.isFrozen(nonConfigurable) //=== false</span><br><span class="line"></span><br><span class="line">// 把这个属性改为不可写,会让这个对象成为冻结对象.</span><br><span class="line">Object.defineProperty(nonConfigurable, &quot;release&quot;, &#123; writable: false &#125;);</span><br><span class="line">Object.isFrozen(nonConfigurable) //=== true</span><br><span class="line"></span><br><span class="line">// 一个不可扩展的对象,值拥有一个访问器属性,则它仍然是非冻结的.</span><br><span class="line">var accessor = &#123; get food() &#123; return &quot;yum&quot;; &#125; &#125;;</span><br><span class="line">Object.preventExtensions(accessor);</span><br><span class="line">Object.isFrozen(accessor) //=== false</span><br><span class="line"></span><br><span class="line">// ...但把这个属性改为不可配置,会让这个对象成为冻结对象.</span><br><span class="line">Object.defineProperty(accessor, &quot;food&quot;, &#123; configurable: false &#125;);</span><br><span class="line">Object.isFrozen(accessor) //=== true</span><br><span class="line"></span><br><span class="line">// 使用Object.freeze是冻结一个对象最方便的方法.</span><br><span class="line">var frozen = &#123; 1: 81 &#125;;</span><br><span class="line">Object.isFrozen(frozen) //=== false</span><br><span class="line">Object.freeze(frozen);</span><br><span class="line">Object.isFrozen(frozen) //=== true</span><br><span class="line"></span><br><span class="line">// 一个冻结对象也是一个密封对象.</span><br><span class="line">Object.isSealed(frozen) //=== true</span><br><span class="line"></span><br><span class="line">// 当然,更是一个不可扩展的对象.</span><br><span class="line">Object.isExtensible(frozen) //=== false</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><h5 id="Object-isSealed"><a href="#Object-isSealed" class="headerlink" title="Object.isSealed()"></a><strong>Object.isSealed()</strong></h5><ul>
+<li><p>判断对象是否已经密封。 </p>
+</li>
+<li><p>语法: <code>Object.isSealed(obj)</code></p>
+</li>
+<li><p>返回值: 表示给定对象是否被密封的一个<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Boolean" target="_blank" rel="noopener"><code>Boolean</code></a> 。 </p>
+</li>
+<li><p>示例: </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">// 新建的对象默认不是密封的.</span><br><span class="line">var empty = &#123;&#125;;</span><br><span class="line">Object.isSealed(empty); // === false</span><br><span class="line"></span><br><span class="line">// 如果你把一个空对象变的不可扩展,则它同时也会变成个密封对象.</span><br><span class="line">Object.preventExtensions(empty);</span><br><span class="line">Object.isSealed(empty); // === true</span><br><span class="line"></span><br><span class="line">// 但如果这个对象不是空对象,则它不会变成密封对象,因为密封对象的所有自身属性必须是不可配置的.</span><br><span class="line">var hasProp = &#123; fee: &quot;fie foe fum&quot; &#125;;</span><br><span class="line">Object.preventExtensions(hasProp);</span><br><span class="line">Object.isSealed(hasProp); // === false</span><br><span class="line"></span><br><span class="line">// 如果把这个属性变的不可配置,则这个对象也就成了密封对象.</span><br><span class="line">Object.defineProperty(hasProp, &quot;fee&quot;, &#123; configurable: false &#125;);</span><br><span class="line">Object.isSealed(hasProp); // === true</span><br><span class="line"></span><br><span class="line">// 最简单的方法来生成一个密封对象,当然是使用Object.seal.</span><br><span class="line">var sealed = &#123;&#125;;</span><br><span class="line">Object.seal(sealed);</span><br><span class="line">Object.isSealed(sealed); // === true</span><br><span class="line"></span><br><span class="line">// 一个密封对象同时也是不可扩展的.</span><br><span class="line">Object.isExtensible(sealed); // === false</span><br><span class="line"></span><br><span class="line">// 一个密封对象也可以是一个冻结对象,但不是必须的.</span><br><span class="line">Object.isFrozen(sealed); // === true ，所有的属性都是不可写的</span><br><span class="line">var s2 = Object.seal(&#123; p: 3 &#125;);</span><br><span class="line">Object.isFrozen(s2); // === false， 属性&quot;p&quot;可写</span><br><span class="line"></span><br><span class="line">var s3 = Object.seal(&#123; get p() &#123; return 0; &#125; &#125;);</span><br><span class="line">Object.isFrozen(s3); // === true ，访问器属性不考虑可写不可写,只考虑是否可配置</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><h5 id="Object-keys"><a href="#Object-keys" class="headerlink" title="Object.keys()"></a>Object.keys()</h5><ul>
+<li><p>返回一个包含所有给定对象<strong>自身</strong>可枚举属性名称的数组。 </p>
+</li>
+<li><p>语法: <code>Object.keys(obj)</code></p>
+</li>
+<li><p>返回值: 一个表示给定对象的所有可枚举属性的字符串数组。 </p>
+</li>
+<li><p>示例: </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">// simple array</span><br><span class="line">var arr = [&apos;a&apos;, &apos;b&apos;, &apos;c&apos;];</span><br><span class="line">console.log(Object.keys(arr)); // console: [&apos;0&apos;, &apos;1&apos;, &apos;2&apos;]</span><br><span class="line"></span><br><span class="line">// array like object</span><br><span class="line">var obj = &#123; 0: &apos;a&apos;, 1: &apos;b&apos;, 2: &apos;c&apos; &#125;;</span><br><span class="line">console.log(Object.keys(obj)); // console: [&apos;0&apos;, &apos;1&apos;, &apos;2&apos;]</span><br><span class="line"></span><br><span class="line">// array like object with random key ordering</span><br><span class="line">var anObj = &#123; 100: &apos;a&apos;, 2: &apos;b&apos;, 7: &apos;c&apos; &#125;;</span><br><span class="line">console.log(Object.keys(anObj)); // console: [&apos;2&apos;, &apos;7&apos;, &apos;100&apos;]</span><br><span class="line"></span><br><span class="line">// getFoo is a property which isn&apos;t enumerable</span><br><span class="line">var myObj = Object.create(&#123;&#125;, &#123;</span><br><span class="line">  getFoo: &#123;</span><br><span class="line">    value: function () &#123; return this.foo; &#125;</span><br><span class="line">  &#125; </span><br><span class="line">&#125;);</span><br><span class="line">myObj.foo = 1;</span><br><span class="line">console.log(Object.keys(myObj)); // console: [&apos;foo&apos;]</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><h5 id="Object-values"><a href="#Object-values" class="headerlink" title="Object.values()"></a>Object.values()</h5><ul>
+<li><p>返回给定对象自身可枚举值的数组。 </p>
+</li>
+<li><p>语法: <code>Object.values(obj)</code></p>
+</li>
+<li><p>返回值: 一个包含对象自身的所有可枚举属性值的数组。 </p>
+</li>
+<li><p>示例: </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123; foo: &apos;bar&apos;, baz: 42 &#125;;</span><br><span class="line">console.log(Object.values(obj)); // [&apos;bar&apos;, 42]</span><br><span class="line"></span><br><span class="line">// array like object</span><br><span class="line">var obj = &#123; 0: &apos;a&apos;, 1: &apos;b&apos;, 2: &apos;c&apos; &#125;;</span><br><span class="line">console.log(Object.values(obj)); // [&apos;a&apos;, &apos;b&apos;, &apos;c&apos;]</span><br><span class="line"></span><br><span class="line">// array like object with random key ordering</span><br><span class="line">// when we use numeric keys, the value returned in a numerical order according to the keys</span><br><span class="line">var an_obj = &#123; 100: &apos;a&apos;, 2: &apos;b&apos;, 7: &apos;c&apos; &#125;;</span><br><span class="line">console.log(Object.values(an_obj)); // [&apos;b&apos;, &apos;c&apos;, &apos;a&apos;]</span><br><span class="line"></span><br><span class="line">// getFoo is property which isn&apos;t enumerable</span><br><span class="line">var my_obj = Object.create(&#123;&#125;, &#123; getFoo: &#123; value: function() &#123; return this.foo; &#125; &#125; &#125;);</span><br><span class="line">my_obj.foo = &apos;bar&apos;;</span><br><span class="line">console.log(Object.values(my_obj)); // [&apos;bar&apos;]</span><br><span class="line"></span><br><span class="line">// non-object argument will be coerced to an object</span><br><span class="line">console.log(Object.values(&apos;foo&apos;)); // [&apos;f&apos;, &apos;o&apos;, &apos;o&apos;]</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><h5 id="Object-preventExtensions"><a href="#Object-preventExtensions" class="headerlink" title="Object.preventExtensions()"></a><strong>Object.preventExtensions()</strong></h5><ul>
+<li><p>让一个对象变的不可扩展，也就是永远不能再添加新的属性。 </p>
+</li>
+<li><p>语法: <code>Object.preventExtensions(obj)</code></p>
+</li>
+<li><p>返回值: 已经不可扩展的对象。 </p>
+</li>
+<li><p>示例: </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">// Object.preventExtensions将原对象变的不可扩展,并且返回原对象.</span><br><span class="line">var obj = &#123;&#125;;</span><br><span class="line">var obj2 = Object.preventExtensions(obj);</span><br><span class="line">obj === obj2;  // true</span><br><span class="line"> </span><br><span class="line">// 字面量方式定义的对象默认是可扩展的.</span><br><span class="line">var empty = &#123;&#125;;</span><br><span class="line">Object.isExtensible(empty) //=== true</span><br><span class="line"> </span><br><span class="line">// ...但可以改变.</span><br><span class="line">Object.preventExtensions(empty);</span><br><span class="line">Object.isExtensible(empty) //=== false</span><br><span class="line"> </span><br><span class="line">// 使用Object.defineProperty方法为一个不可扩展的对象添加新属性会抛出异常.</span><br><span class="line">var nonExtensible = &#123; removable: true &#125;;</span><br><span class="line">Object.preventExtensions(nonExtensible);</span><br><span class="line">Object.defineProperty(nonExtensible, &quot;new&quot;, &#123; value: 8675309 &#125;); // 抛出TypeError异常</span><br><span class="line"> </span><br><span class="line">// 在严格模式中,为一个不可扩展对象的新属性赋值会抛出TypeError异常.</span><br><span class="line">function fail()</span><br><span class="line">&#123;</span><br><span class="line">  &quot;use strict&quot;;</span><br><span class="line">  nonExtensible.newProperty = &quot;FAIL&quot;; // throws a TypeError</span><br><span class="line">&#125;</span><br><span class="line">fail();</span><br><span class="line"> </span><br><span class="line">// 一个不可扩展对象的原型是不可更改的,__proto__是个非标准魔法属性,可以更改一个对象的原型.</span><br><span class="line">var fixed = Object.preventExtensions(&#123;&#125;);</span><br><span class="line">fixed.__proto__ = &#123; oh: &quot;hai&quot; &#125;; // 抛出TypeError异常</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><h5 id="Object-seal"><a href="#Object-seal" class="headerlink" title="Object.seal()"></a><strong>Object.seal()</strong></h5><ul>
+<li><p>封闭一个对象，阻止添加新属性并将所有现有属性标记为不可配置。当前属性的值只要可写就可以改变 (密封)</p>
+</li>
+<li><p>语法: <code>Object.seal(obj)</code></p>
+</li>
+<li><p>返回值: 被密封的对象。 </p>
+</li>
+<li><p>示例: </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;</span><br><span class="line">  prop: function() &#123;&#125;,</span><br><span class="line">  foo: &apos;bar&apos;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">// New properties may be added, existing properties</span><br><span class="line">// may be changed or removed.</span><br><span class="line">obj.foo = &apos;baz&apos;;</span><br><span class="line">obj.lumpy = &apos;woof&apos;;</span><br><span class="line">delete obj.prop;</span><br><span class="line"></span><br><span class="line">var o = Object.seal(obj);</span><br><span class="line"></span><br><span class="line">o === obj; // true</span><br><span class="line">Object.isSealed(obj); // === true</span><br><span class="line"></span><br><span class="line">// Changing property values on a sealed object</span><br><span class="line">// still works.</span><br><span class="line">obj.foo = &apos;quux&apos;;</span><br><span class="line"></span><br><span class="line">// But you can&apos;t convert data properties to accessors,</span><br><span class="line">// or vice versa.</span><br><span class="line">Object.defineProperty(obj, &apos;foo&apos;, &#123;</span><br><span class="line">  get: function() &#123; return &apos;g&apos;; &#125;</span><br><span class="line">&#125;); // throws a TypeError</span><br><span class="line"></span><br><span class="line">// Now any changes, other than to property values,</span><br><span class="line">// will fail.</span><br><span class="line">obj.quaxxor = &apos;the friendly duck&apos;;</span><br><span class="line">// silently doesn&apos;t add the property</span><br><span class="line">delete obj.foo;</span><br><span class="line">// silently doesn&apos;t delete the property</span><br><span class="line"></span><br><span class="line">// ...and in strict mode such attempts</span><br><span class="line">// will throw TypeErrors.</span><br><span class="line">function fail() &#123;</span><br><span class="line">  &apos;use strict&apos;;</span><br><span class="line">  delete obj.foo; // throws a TypeError</span><br><span class="line">  obj.sparky = &apos;arf&apos;; // throws a TypeError</span><br><span class="line">&#125;</span><br><span class="line">fail();</span><br><span class="line"></span><br><span class="line">// Attempted additions through</span><br><span class="line">// Object.defineProperty will also throw.</span><br><span class="line">Object.defineProperty(obj, &apos;ohai&apos;, &#123;</span><br><span class="line">  value: 17</span><br><span class="line">&#125;); // throws a TypeError</span><br><span class="line">Object.defineProperty(obj, &apos;foo&apos;, &#123;</span><br><span class="line">  value: &apos;eit&apos;</span><br><span class="line">&#125;); // changes existing property value</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="Object实例与Object原型对象"><a href="#Object实例与Object原型对象" class="headerlink" title="Object实例与Object原型对象"></a><code>Object</code>实例与<code>Object</code>原型对象</h4><ul>
+<li><h5 id="Object-prototype-constructor"><a href="#Object-prototype-constructor" class="headerlink" title="Object.prototype.constructor"></a>Object.prototype.constructor</h5><ul>
+<li>特定的函数，用于创建一个对象的原型。 </li>
+</ul>
+</li>
+<li><h5 id="Object-prototype-proto"><a href="#Object-prototype-proto" class="headerlink" title="Object.prototype.proto"></a>Object.prototype.<strong>proto</strong></h5><ul>
+<li>指向当对象被实例化的时候，用作原型的对象。 </li>
+<li>该特性已经从 Web 标准中删除，虽然一些浏览器目前仍然支持它，但也许会在未来的某个时间停止支持，请尽量不要使用该特性 </li>
+</ul>
+</li>
+<li><h5 id="Object-prototype-toString"><a href="#Object-prototype-toString" class="headerlink" title="Object.prototype.toString()"></a>Object.prototype.toString()</h5><ul>
+<li><p>返回一个表示该对象的字符串。 </p>
+</li>
+<li><p>使用<code>toString()</code>检测对象类型: </p>
+<p>可以通过<code>toString()</code> 来获取每个对象的类型。为了每个对象都能通过 <code>Object.prototype.toString()</code> 来检测，需要以 <code>Function.prototype.call()</code> 或者 <code>Function.prototype.apply()</code> 的形式来调用，传递要检查的对象作为第一个参数，称为<code>thisArg</code>。 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var toString = Object.prototype.toString;</span><br><span class="line"></span><br><span class="line">toString.call(new Date); // [object Date]</span><br><span class="line">toString.call(new String); // [object String]</span><br><span class="line">toString.call(Math); // [object Math]</span><br><span class="line"></span><br><span class="line">//Since JavaScript 1.8.5</span><br><span class="line">toString.call(undefined); // [object Undefined]</span><br><span class="line">toString.call(null); // [object Null]</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语:"></a>结语:</h2><p>​    原文大部分来自MDN,本文这里进行了收录和整理,方便下次查找</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+    <div>
+        
+          <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+        
+      </div>
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/" rel="tag"><i class="fa fa-tag"></i> JavaScript</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/06/14/手动实现webpack-Devserve的自动编译和热更新/" rel="next" title="手动实现webpack-dev-server的自动编译和热更新">
+                <i class="fa fa-chevron-left"></i> 手动实现webpack-dev-server的自动编译和热更新
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.jpg"
+               alt="杨瑞超" />
+          <p class="site-author-name" itemprop="name">杨瑞超</p>
+           
+              <p class="site-description motion-element" itemprop="description">天下事有难易乎？为之，则难者亦易矣；不为，则易者亦难矣。</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/yangruichao" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/6224797196" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      微博
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/your-user-name" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      知乎
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              推荐阅读
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.zhangxinxu.com/" title="张鑫旭" target="_blank">张鑫旭</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.36zhen.com/t?id=3448" title="前端书籍资料" target="_blank">前端书籍资料</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://wf.uisdc.com/cn/" title="google前端开发基础" target="_blank">google前端开发基础</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正文"><span class="nav-number">2.</span> <span class="nav-text">正文</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Object的构造方法"><span class="nav-number">2.0.1.</span> <span class="nav-text">Object的构造方法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Object-assign"><span class="nav-number">2.0.1.1.</span> <span class="nav-text">Object.assign()</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Object-create"><span class="nav-number">2.0.1.2.</span> <span class="nav-text">Object.create()</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Object-defineProperty"><span class="nav-number">2.0.1.3.</span> <span class="nav-text">Object.defineProperty()</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Object-defineProperties"><span class="nav-number">2.0.1.4.</span> <span class="nav-text">Object.defineProperties()</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Object-entries"><span class="nav-number">2.0.1.5.</span> <span class="nav-text">Object.entries()</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Object-freeze"><span class="nav-number">2.0.1.6.</span> <span class="nav-text">Object.freeze()</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Object-getOwnPropertyDescriptor"><span class="nav-number">2.0.1.7.</span> <span class="nav-text">Object.getOwnPropertyDescriptor()</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Object-getOwnPropertyNames"><span class="nav-number">2.0.1.8.</span> <span class="nav-text">Object.getOwnPropertyNames()</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Object-getOwnPropertySymbols"><span class="nav-number">2.0.1.9.</span> <span class="nav-text">Object.getOwnPropertySymbols()</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Object-getPrototypeOf"><span class="nav-number">2.0.1.10.</span> <span class="nav-text">Object.getPrototypeOf()</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Object-is"><span class="nav-number">2.0.1.11.</span> <span class="nav-text">Object.is()</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Object-isExtensible"><span class="nav-number">2.0.1.12.</span> <span class="nav-text">Object.isExtensible()</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Object-isFrozen"><span class="nav-number">2.0.1.13.</span> <span class="nav-text">Object.isFrozen()</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Object-isSealed"><span class="nav-number">2.0.1.14.</span> <span class="nav-text">Object.isSealed()</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Object-keys"><span class="nav-number">2.0.1.15.</span> <span class="nav-text">Object.keys()</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Object-values"><span class="nav-number">2.0.1.16.</span> <span class="nav-text">Object.values()</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Object-preventExtensions"><span class="nav-number">2.0.1.17.</span> <span class="nav-text">Object.preventExtensions()</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Object-seal"><span class="nav-number">2.0.1.18.</span> <span class="nav-text">Object.seal()</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Object实例与Object原型对象"><span class="nav-number">2.0.2.</span> <span class="nav-text">Object实例与Object原型对象</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Object-prototype-constructor"><span class="nav-number">2.0.2.1.</span> <span class="nav-text">Object.prototype.constructor</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Object-prototype-proto"><span class="nav-number">2.0.2.2.</span> <span class="nav-text">Object.prototype.proto</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Object-prototype-toString"><span class="nav-number">2.0.2.3.</span> <span class="nav-text">Object.prototype.toString()</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结语"><span class="nav-number">3.</span> <span class="nav-text">结语:</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">杨瑞超</span>
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i> 访问人数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i> 总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>
